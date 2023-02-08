@@ -288,29 +288,7 @@ $(function () {
     clearInterval(interval);
     $('#send_message').html('<div class="spinner-border text-light" role="status"><span class="sr-only">Loading...</span></div>');
 			var message = 'Call Ended. Talk time : ' + convertSec(counter++);
-				if(message!=''){
-					
-				var d = new Date(),
-					messageHour = d.getHours(),
-					messageMinute = d.getMinutes(),
-					messageSec = d.getSeconds(),
-					messageYear = d.getFullYear(),
-					messageDate = d.getDate(),
-					messageMonth = d.getMonth() + 1,
-					actualDateTime = `${messageYear}-${messageMonth}-${messageDate} ${messageHour}:${messageMinute}:${messageSec}`;
 				
-				var data = {
-					message: message,
-					datetime: actualDateTime,
-					uniq: unique_id ,
-					is_send_sms:$("#is_send_sms").val(),
-				}
-				var jsonData = JSON.stringify(data);
-				$.post('ContactLead/sendMessage', { data: jsonData }, function (data) {
-					// $('#messageText').val('');
-					
-				})
-				}
   }
   
   function convertSec(cnt) {
@@ -333,29 +311,7 @@ $(function () {
     ret.classList.remove("d-none");
     $('#send_message').html('<div class="spinner-border text-light" role="status"><span class="sr-only">Loading...</span></div>');
 			var message = 'Call Started';
-				if(message!=''){
-					
-				var d = new Date(),
-					messageHour = d.getHours(),
-					messageMinute = d.getMinutes(),
-					messageSec = d.getSeconds(),
-					messageYear = d.getFullYear(),
-					messageDate = d.getDate(),
-					messageMonth = d.getMonth() + 1,
-					actualDateTime = `${messageYear}-${messageMonth}-${messageDate} ${messageHour}:${messageMinute}:${messageSec}`;
-				
-				var data = {
-					message: message,
-					datetime: actualDateTime,
-					uniq: unique_id ,
-					is_send_sms:$("#is_send_sms").val(),
-				}
-				var jsonData = JSON.stringify(data);
-				$.post('ContactLead/sendMessage', { data: jsonData }, function (data) {
-					// $('#messageText').val('');
-					
-				})
-				}
+			
 
 
      counter = 0;
